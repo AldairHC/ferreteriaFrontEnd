@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="card" style="width: 40rem; left: 125px; top: 10px;">
+    <div class="card-body">
+      <h5 class="card-title">Registrar Cliente</h5>
+      <div class="row mt-2">
+        <div class="col-md-8 mx-auto">
+          <form (ngSubmit)="crearCliente()" novalidate #f="ngForm">
+            <div class="form-group">
+              <label for="nombres">Nombres</label>
+              <input type="text" class="form-control" id="nombres" name="nombres" [(ngModel)]="cliente.nombres"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="apellidos">Apellidos</label>
+              <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="cliente.apellidos"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="direccion">Direccion</label>
+              <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="cliente.direccion"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="cliente.telefono"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="tipo_documento">Tipo Documento</label>
+              <input type="text" class="form-control" id="tipo_documento" name="tipo_documento"
+                [(ngModel)]="cliente.tipo_documento" required />
+
+            </div>
+
+            <div class="form-group">
+              <label for="numero_documento">Numero Documento</label>
+              <input type="text" class="form-control" id="numero_documento" name="numero_documento"
+                [(ngModel)]="cliente.numero_documento" required />
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-danger me-md-2 row mr-4" type="button" [routerLink]="['/clientes']"><i
+                  class="fas fa-undo"></i> Cancelar</button>
+              <button class="btn btn-outline-primary row mr-1" role="button"><i class="fas fa-plus-circle"></i>
+                Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

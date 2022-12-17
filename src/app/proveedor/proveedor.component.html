@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    Lista de Proveedores </div>
+  <div class="card-body">
+        <a class="nav-link" routerLink="/proveedor/guardar"><i class="fas fa-plus-circle"></i> Nuevo Proveedor</a>
+   <br>
+
+    <table class="table caption-top">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">ESTADO</th>
+          <th scope="col">TELEFONO</th>
+          <th scope="col" class="text-center">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let proveedores of proveedor">
+          <td>{{proveedores.idProveedor}}</td>
+          <td>{{proveedores.nombre}}</td>
+          <td>{{proveedores.estado}}</td>
+          <td>{{proveedores.telefono}}</td>
+          <td class="text-center">
+            <button class="btn btn-outline-primary" routerLink="/proveedor/detalle/{{proveedores.idProveedor}}" style="margin-left : 10px;"><i class="far fa-eye"></i> Ver</button>
+            <button class="btn btn-outline-warning" routerLink="/proveedor/editar/{{proveedores.idProveedor}}" style="margin-left : 10px;"><i class="far fa-edit"></i> Editar</button>
+              <button class="btn btn-outline-danger" (click)="borrarProveedor(proveedores.idProveedor)" style="margin-left : 10px;"><i class="far fa-trash-alt"></i> Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-5" *ngIf="cliente">
+    <div class="col-md-4 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header text-center">
+          Detalle Cliente
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>ID: </b>{{cliente.idCliente}}</li>
+          <li class="list-group-item"><b>Nombres: </b>{{cliente.nombres}}</li>
+          <li class="list-group-item"><b>Apellidos: </b>{{cliente.apellidos}}</li>
+          <li class="list-group-item"><b>Direccion: </b>{{cliente.direccion}}</li>
+          <li class="list-group-item"><b>Telefono: </b>{{cliente.telefono}}</li>
+          <li class="list-group-item"><b>Tipo Documento: </b>{{cliente.tipo_documento}}</li>
+          <li class="list-group-item"><b>Nª Documento: </b>{{cliente.numero_documento}}</li>
+        </ul>
+        <div class="card-footer">
+          <button class="btn btn-outline-primary btn-block" (click)="volver()"><i
+              class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

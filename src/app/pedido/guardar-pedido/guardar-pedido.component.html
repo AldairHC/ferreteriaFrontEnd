@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="card" style="width: 40rem; left: 125px; top: 10px;">
+    <div class="card-body">
+      <h5 class="card-title">Registrar Pedido</h5>
+      <div class="row mt-2">
+        <div class="col-md-8 mx-auto">
+          <form (ngSubmit)="crearPedido()" novalidate #f="ngForm">
+
+            <div class="form-group">
+              <label for="descripcion">Descripcion</label>
+              <input type="text" class="form-control" id="descripcion" name="descripcion"
+                [(ngModel)]="pedido.descripcion" required />
+            </div>
+
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="text" class="form-control" id="fecha" name="fecha"
+                [(ngModel)]="pedido.fecha" required />
+            </div>
+
+            <div class="form-group">
+              <label for="cantidad">Cantidad</label>
+              <input type="text" class="form-control" id="cantidad" name="cantidad"
+                [(ngModel)]="pedido.cantidad" required />
+            </div>
+
+            <div class="form-group">
+              <label for="producto">Producto</label>
+              <select [(ngModel)]="pedido.producto" name="producto" class="form-select"
+                aria-label="Default select example">
+                <option [ngValue]="undefined">---Seleccione Producto---</option>
+                <option *ngFor="let pro of producto" [ngValue]="pro">{{pro.nombre}}</option>
+              </select>
+            </div>
+
+
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-danger me-md-2 row mr-4" type="button" [routerLink]="['/pedidos']"><i
+                  class="fas fa-undo"></i> Cancelar</button>
+              <button class="btn btn-outline-primary row mr-1" role="button"><i class="fas fa-plus-circle"></i>
+                Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

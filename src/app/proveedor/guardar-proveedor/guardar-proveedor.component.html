@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card" style="width: 40rem; left: 125px; top: 10px;">
+    <div class="card-body">
+      <h5 class="card-title">Registrar Proveedor</h5>
+      <div class="row mt-2">
+        <div class="col-md-8 mx-auto">
+          <form (ngSubmit)="crearProveedor()" novalidate #f="ngForm">
+            <div class="form-group">
+              <label for="nombre">Nombres</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="proveedor.nombre"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="estado">Estado</label>
+              <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="proveedor.estado"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="proveedor.telefono"
+                required />
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-danger me-md-2 row mr-4" type="button" [routerLink]="['/empleados']"><i
+                  class="fas fa-undo"></i> Cancelar</button>
+              <button class="btn btn-outline-primary row mr-1" role="button"><i class="fas fa-plus-circle"></i>
+                Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

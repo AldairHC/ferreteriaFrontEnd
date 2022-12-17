@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    Lista de Clientes </div>
+  <div class="card-body">
+        <a class="nav-link" routerLink="/clientes/guardar"><i class="fas fa-plus-circle"></i> Nuevo Cliente</a>
+   <br>
+
+    <table class="table caption-top">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRES</th>
+          <th scope="col">APELLIDOS</th>
+          <th scope="col">DIRECCION</th>
+          <th scope="col">TELEFONO</th>
+          <th scope="col">TIPO DOCUMENTO</th>
+          <th scope="col">Nº DOCUMENTO</th>
+          <th scope="col" class="text-center">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let clientes of cliente">
+          <td>{{clientes.idCliente}}</td>
+          <td>{{clientes.nombres}}</td>
+          <td>{{clientes.apellidos}}</td>
+          <td>{{clientes.direccion}}</td>
+          <td>{{clientes.telefono}}</td>
+          <td>{{clientes.tipo_documento}}</td>
+          <td>{{clientes.numero_documento}}</td>
+          <td class="text-center">
+            <button class="btn btn-outline-primary" routerLink="/clientes/detalle/{{clientes.idCliente}}" style="margin-left : 10px;"><i class="far fa-eye"></i> Ver</button>
+            <button class="btn btn-outline-warning" routerLink="/clientes/editar/{{clientes.idCliente}}" style="margin-left : 10px;"><i class="far fa-edit"></i> Editar</button>
+              <button class="btn btn-outline-danger" (click)="borrarCliente(clientes.idCliente)" style="margin-left : 10px;"><i class="far fa-trash-alt"></i> Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

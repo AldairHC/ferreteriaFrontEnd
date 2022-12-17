@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+      Lista de Categorias </div>
+    <div class="card-body">
+          <a class="nav-link" routerLink="/categorias/guardar"><i class="fas fa-plus-circle"></i> Nueva Categoria</a>
+     <br>
+
+      <table class="table caption-top">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col" class="text-center">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categorias of categoria">
+            <td>{{categorias.idCategoria}}</td>
+            <td>{{categorias.nombre}}</td>
+            <td class="text-center">
+              <button class="btn btn-outline-primary" routerLink="/categorias/detalle/{{categorias.idCategoria}}" style="margin-left : 10px;"><i class="far fa-eye"></i> Ver</button>
+              <button class="btn btn-outline-warning" routerLink="/categorias/editar/{{categorias.idCategoria}}" style="margin-left : 10px;"><i class="far fa-edit"></i> Editar</button>
+                <button class="btn btn-outline-danger" (click)="borrarCategoria(categorias.idCategoria)" style="margin-left : 10px;"><i class="far fa-trash-alt"></i> Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    Lista de Productos </div>
+  <div class="card-body">
+        <a class="nav-link" routerLink="/productos/guardar"><i class="fas fa-plus-circle"></i> Nuevo Producto</a>
+   <br>
+
+    <table class="table caption-top">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">DESCRIPCION</th>
+          <th scope="col">PRECIO</th>
+          <th scope="col">CANTIDAD</th>
+          <th scope="col">Marca</th>
+          <th scope="col">CATEGORIA</th>
+          <th scope="col">PROVEEDOR</th>
+          <th scope="col" class="text-center">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let productos of producto">
+          <td>{{productos.idProducto}}</td>
+          <td>{{productos.nombre}}</td>
+          <td>{{productos.descripcion}}</td>
+          <td>{{productos.precio}}</td>
+          <td>{{productos.cantidad}}</td>
+          <td>{{productos.marca}}</td>
+          <td>{{productos.categoria.nombre}}</td>
+          <td>{{productos.proveedor.nombre}}</td>
+          <td class="text-center">
+            <button class="btn btn-outline-primary" routerLink="/productos/detalle/{{productos.idProducto}}" style="margin-left : 10px;"><i class="far fa-eye"></i> Ver</button>
+            <button class="btn btn-outline-warning" routerLink="/productos/editar/{{productos.idProducto}}" style="margin-left : 10px;"><i class="far fa-edit"></i> Editar</button>
+              <button class="btn btn-outline-danger" (click)="borrarProducto(productos.idProducto)" style="margin-left : 10px;"><i class="far fa-trash-alt"></i> Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

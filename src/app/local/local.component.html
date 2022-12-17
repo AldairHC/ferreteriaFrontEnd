@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    Lista de Locales </div>
+  <div class="card-body">
+        <a class="nav-link" routerLink="/local/guardar"><i class="fas fa-plus-circle"></i> Nuevo Local</a>
+   <br>
+
+    <table class="table caption-top">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRES</th>
+          <th scope="col">DESCRIPCION</th>
+          <th scope="col" class="text-center">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let locales of local">
+          <td>{{locales.idLocal}}</td>
+          <td>{{locales.nombre}}</td>
+          <td>{{locales.descripcion}}</td>
+          <td class="text-center">
+            <button class="btn btn-outline-primary" routerLink="/local/detalle/{{locales.idLocal}}" style="margin-left : 10px;"><i class="far fa-eye"></i> Ver</button>
+            <button class="btn btn-outline-warning" routerLink="/local/editar/{{locales.idLocal}}" style="margin-left : 10px;"><i class="far fa-edit"></i> Editar</button>
+              <button class="btn btn-outline-danger" (click)="borrarLocal(locales.idLocal)" style="margin-left : 10px;"><i class="far fa-trash-alt"></i> Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
